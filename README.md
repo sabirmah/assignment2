@@ -18,5 +18,4 @@ Group Members
 - Rahul khanal (S383968)
 - Samir Oli (
 
- GitHub Link
 - Stored in `github_link.txt`
