@@ -13,10 +13,10 @@ Instructions
 - Have to see each Python file header for exact instructions to run.
 
 Group Members
-- sabir pudasaini (S393882)  
-- anish regmi (S394627)  
-- safal khanal (S383968)
-- samir oli (
+- Sabir Pudasaini (S393882)  
+- Anish regmi (S394627)  
+- Rahul khanal (S383968)
+- Samir Oli (
 
  GitHub Link
 - Stored in `github_link.txt`
