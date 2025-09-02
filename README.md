@@ -19,4 +19,4 @@ Group Members
 - Samir Oli (
 
   GitHub Link
-- Stored in `github_link.txt`
+- Stored in `https://github.com/sabirmah/assignment2'
