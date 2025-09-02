@@ -13,8 +13,8 @@ Instructions
 - See each Python file header for exact instructions to run.
 
 Group Members
-- sabir pudasaini (Student ID)  
-- anish regmi (Student ID)  
+- sabir pudasaini (s393882)  
+- anish regmi (S394627)  
 -  (Student ID)
 
  GitHub Link
