@@ -1,6 +1,9 @@
 # assignment2
-CDU – Software Assignment 2 (Group). Q1 encryption/decryption, Q2 temperature analysis, Q3 recursive turtle graphics. 
-Assignment 2 – CDU Group Project
+CDU – Software Now Assignment 2 (Group-CAS14).
+Q1 encryption/decryption,
+Q2 temperature analysis, 
+Q3 recursive turtle graphics. 
+
 
  Contents
 - Q1: Encryption/Decryption → que1_encryption/que1.py
@@ -14,8 +17,8 @@ Instructions
 
 Group Members
 - Sabir Pudasaini (S393882)  
-- Anish regmi (S394627)  
-- Rahul khanal (S383968)
+- Anish Regmi (S394627)  
+- Rahul Khanal (S383968)
 - Samir Oli ()
 
   GitHub Link
