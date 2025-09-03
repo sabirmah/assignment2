@@ -4,8 +4,7 @@ Q1 Encryption/Decryption,
 Q2 Temperature Analysis, 
 Q3 Recursive Turtle Graphics. 
 
-
- Contents
+Contents
 - Q1: Encryption/Decryption → que1_encryption/que1.py
 - Q2: Temperature Analysis → que2_temperature/que2.py
 - Q3: Recursive Turtle Graphics → que3_turtle/que3.py
