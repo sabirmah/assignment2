@@ -16,13 +16,13 @@ all_data['Date'] = pd.to_datetime(all_data['Date'])
 # Define seasons
 def get_season(month):
     if month in [12, 1, 2]:
-        return 'Summer'
+        return 'SUMMER'
     elif month in [3, 4, 5]:
-        return 'Autumn'
+        return 'AUTUMN'
     elif month in [6, 7, 8]:
-        return 'Winter'
+        return 'WINTER'
     else:
-        return 'Spring'
+        return 'SPRING'
 
 all_data['Season'] = all_data['Date'].dt.month.apply(get_season)
 
