@@ -14,7 +14,7 @@ def draw_koch_edge(t, length, depth):
         t.left(60)
         draw_koch_edge(t, length, depth-1)
 
-def draw_polygon(a, sides, length, depth):
+def draw_polygon(t, sides, length, depth):
     angle = 360 / sides
     for _ in range(sides):
         draw_koch_edge(t, length, depth)
