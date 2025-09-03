@@ -2,7 +2,7 @@
 CDU – Software Now Assignment 2 (Group-CAS14).
 Q1 Encryption/Decryption,
 Q2 Temperature Analysis, 
-Q3 Recursive T urtle graphics. 
+Q3 Recursive Turtle Graphics. 
 
 
  Contents
