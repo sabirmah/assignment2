@@ -18,7 +18,7 @@ Group Members
 - Sabir Pudasaini (S393882)  
 - Anish Regmi (S394627)  
 - Rahul Khanal (S383968)
-- Samir Oli ()
+- Samir Oli (S396165)
 
   GitHub Link
 - Stored in 'https://github.com/sabirmah/assignment2'
