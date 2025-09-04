@@ -1,0 +1,2 @@
+Most Stable: Station Brisbane: StdDev 4.5°C
+Most Variable: Station Melbourne: StdDev 7.6°C
