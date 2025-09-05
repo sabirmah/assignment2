@@ -1,0 +1,5 @@
+File: stations_group_1994.csv
+Column used: STN_ID
+Average: 40784.67
+Max: 96003
+Min: 1019
