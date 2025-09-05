@@ -1,56 +1,47 @@
-import pandas as pd
 import os
-import glob
-import numpy as np
+import pandas as pd
 
 # Folder containing CSV files
-folder = 'temperatures'
-files = glob.glob(os.path.join(folder, '*.csv'))
+folder_path = "temperatures"
 
-# Combine all CSVs
-all_data = pd.concat([pd.read_csv(f) for f in files], ignore_index=True)
+# Output folder for .txt results
+output_folder = "output"
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
-# Convert date column to datetime if exists
-all_data['Date'] = pd.to_datetime(all_data['Date'])
+# Loop through CSV files
+for file in os.listdir(folder_path):
+    if file.endswith(".csv"):
+        file_path = os.path.join(folder_path, file)
+        try:
+            df = pd.read_csv(file_path)
 
-# Define seasons
-def get_season(month):
-    if month in [12, 1, 2]:
-        return 'SUMMER'
-    elif month in [3, 4, 5]:
-        return 'AUTUMN'
-    elif month in [6, 7, 8]:
-        return 'WINTER'
-    else:
-        return 'SPRING'
+            # Find first numeric column (instead of forcing "Temperature")
+            numeric_cols = df.select_dtypes(include="number").columns
+            if len(numeric_cols) == 0:
+                print(f"{file}: No numeric columns found, skipping.")
+                continue
 
-all_data['Season'] = all_data['Date'].dt.month.apply(get_season)
+            col = numeric_cols[0]  # take the first numeric column
+            avg_temp = df[col].mean(skipna=True)
+            max_temp = df[col].max(skipna=True)
+            min_temp = df[col].min(skipna=True)
 
-# Seasonal Average
-seasonal_avg = all_data.groupby('Season')['Temperature'].mean()
-with open('average_temp.txt', 'w') as f:
-    for season, avg in seasonal_avg.items():
-        f.write(f"{season}: {avg:.1f}°C\n")
+            result_text = (
+                f"File: {file}\n"
+                f"Column used: {col}\n"
+                f"Average: {avg_temp:.2f}\n"
+                f"Max: {max_temp}\n"
+                f"Min: {min_temp}\n"
+            )
 
-# Temperature range per station
-station_stats = all_data.groupby('Station')['Temperature'].agg(['max','min','std'])
-station_stats['range'] = station_stats['max'] - station_stats['min']
-max_range = station_stats['range'].max()
-largest_range_stations = station_stats[station_stats['range'] == max_range]
+            print(result_text)
 
-with open('largest_temp_range_station.txt', 'w') as f:
-    for station, row in largest_range_stations.iterrows():
-        f.write(f"Station {station}: Range {row['range']:.1f}°C (Max: {row['max']:.1f}°C, Min: {row['min']:.1f}°C)\n")
+            # Save to output folder
+            output_file = os.path.join(output_folder, file.replace(".csv", ".txt"))
+            with open(output_file, "w") as f:
+                f.write(result_text)
 
-# Temperature stability
-min_std = station_stats['std'].min()
-max_std = station_stats['std'].max()
-most_stable = station_stats[station_stats['std'] == min_std]
-most_variable = station_stats[station_stats['std'] == max_std]
-
-with open('temperature_stability_stations.txt', 'w') as f:
-    for station, row in most_stable.iterrows():
-        f.write(f"Most Stable: Station {station}: StdDev {row['std']:.1f}°C\n")
-    for station, row in most_variable.iterrows():
-        f.write(f"Most Variable: Station {station}: StdDev {row['std']:.1f}°C\n")
+        except Exception as e:
+            print(f"Error processing {file}: {e}")
 
