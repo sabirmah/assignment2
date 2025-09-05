@@ -21,7 +21,7 @@ shift = int(input("Enter shift number for encryption/decryption: "))
 with open("input.txt", "r") as f:
     original_text = f.read()
 
-# Step 2: Encrypt and save
+# Step 2: Encrypt and save 
 encrypted_text = encrypt(original_text, shift)
 with open("encrypted.txt", "w") as f:
     f.write(encrypted_text)
