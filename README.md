@@ -1,7 +1,7 @@
 # assignment2
 CDU – Software Now Assignment 2 (Group-CAS14).
 Q1 Encryption/Decryption,
-Q2 Temperature Analysis, 
+Q2 Temperature Analysis and average, 
 Q3 Recursive Turtle Graphics. 
 
 Contents
@@ -10,7 +10,7 @@ Contents
 - Q3: Recursive Turtle Graphics → que3_turtle/que3.py
 
 Instructions
-- Group members should work in their respective folders.  
+- Group members should work together.  
 - Commit code often with meaningful messages.  
 - Have to see each Python file header for exact instructions to run.
 
